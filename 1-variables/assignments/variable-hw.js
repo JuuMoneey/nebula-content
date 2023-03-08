@@ -22,7 +22,9 @@ const year = 2022
 const transmission = '8-speed Automatic'
 const driveline = 'All Wheel drive'
 const horsepower = '650 hp' 
+const isRunning = false 
+let mileage = 15750
 
-const veichle = `${carName}, ${cost}, ${year},
-        ${transmission}, ${driveline}, ${horsepower}`
+const veichle = `${carName}, ${cost}, ${year}, ${isRunning},
+      ${mileage}, ${transmission}, ${driveline}, ${horsepower}`
 console.log(veichle)
