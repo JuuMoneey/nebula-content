@@ -16,12 +16,12 @@ const animal = `${Name}, ${height}, ${weight}
 console.log(animal)
 
 //2. Create a set of variables that define a vehicle. Must be at least 6 variables.
-const carName = Bentley Continental GT
-const cost = '200,000'
+const carName = 'Bentley Continental GT'
+const cost = '$200,000'
 const year = 2022
-const transmission = 8-speed Automatic
-const driveline = All Wheel drive
-const horsepower = 650 hp 
+const transmission = '8-speed Automatic'
+const driveline = 'All Wheel drive'
+const horsepower = '650 hp' 
 
 const veichle = `${carName}, ${cost}, ${year},
         ${transmission}, ${driveline}, ${horsepower}`
