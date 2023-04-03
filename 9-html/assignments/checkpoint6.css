@@ -1,0 +1,42 @@
+*{
+    margin: auto; 
+    padding: 30px;
+}
+
+body{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         background-color: burlywood;
+     }
+
+.square{
+    height: 300px;
+    width: 300px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    background-color: red;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+} 
+
+#P{ 
+    height: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: brown;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}
