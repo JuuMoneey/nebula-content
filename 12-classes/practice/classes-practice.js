@@ -140,24 +140,24 @@ class Shoe {
     }
 }
 const airForces = new Shoe('6', 'All White', 'Air Force Ones', 'Nike')
-airForces.printSize()
-airForces.printType()
-airForces.printBrand()
-airForces.printBrand()
+// airForces.printSize()
+// airForces.printColor()
+// airForces.printType()
+// airForces.printBrand()
 airForces.printShoe()
 
 const booties = new Shoe('8.5', 'black', 'Knee High Booties', 'Fendi')
-booties.printSize()
-booties.printType()
-booties.printBrand()
-booties.printBrand()
+// booties.printSize()
+// booties.printColor()
+// booties.printType()
+// booties.printBrand()
 booties.printShoe()
 
 const crocs = new Shoe('8', 'pink', 'Classic Lined Fuzzy clogs', 'Crocs')
-crocs.printSize()
-crocs.printType()
-crocs.printBrand()
-crocs.printBrand()
+// crocs.printSize()
+// crocs.printColor()
+// crocs.printType()
+// crocs.printBrand()
 crocs.printShoe()
 
 
@@ -168,18 +168,42 @@ crocs.printShoe()
 //  Animal -> mammal -> land/sea
 class LV extends Shoe {
     //subclass to class child to parent
-    constructor(size, color, type, brand){
+    constructor(size, color, type, brand, store){
         super(size, color, type, brand);
+        //super: look at the parent class
         this.store = store;
         this.sale = '20%';
     }
-    
+    getStore(){
+        return this.store
+    }
+
+    getSale(){
+        return this.sale
+    }
+
+    printStore(){
+        console.log(`Is ${this.store} open today ?`)
+    }
+
+    printSale(){
+        console.log(`There's a sale of ${this.sale} off today only on ${this.brand}.`)
+    }
+
+    printLV(){
+        console.log(`Today im going to ${this.store} for the sale ${this.sale} off. 
+        I want those ${this.color} ${this.brand} ${this.type} ive been dying to get.
+        Hopefully they have them in a size ${this.size}.`)
+    }
 }
 
-const loui = new Shoe('8', 'gold', 'sandals', 'Loui Vuitton', 'Saks');
+const loui = new LV('8', 'gold', 'sandals', 'Loui Vuitton', 'Saks');
 console.log(loui)
-loui.printSize()
-loui.printType()
-loui.printBrand()
-loui.printBrand()
-loui.printShoe()
+// loui.printSize()
+// loui.printColor()
+// loui.printType()
+// loui.printBrand()
+// loui.printShoe()
+// loui.printStore()
+// loui.printSale()
+loui.printLV()
