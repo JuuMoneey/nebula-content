@@ -1,0 +1,34 @@
+:root{
+    --blue: #A2D2FF;
+    --brown: #bc6c25;
+    --purple: #b5838d;
+}
+
+
+body{
+    background-color: var(--brown);
+}
+
+.container{
+    height: 600px;
+    width: 600px;
+    display: grid;
+    background-color: var(--purple);
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: repeat(3, 200px);
+}
+
+.item{
+    height: 100%;
+    width: 100%;
+    background-color: var(--blue);
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+
+
+
+

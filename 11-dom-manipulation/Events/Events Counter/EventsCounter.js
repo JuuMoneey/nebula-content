@@ -68,9 +68,20 @@ button1.style.backgroundColor = 'yellow'
 /* -------------------------------------------------------------------------- */
 // INCREMENT BUTTON FUNTION
 // Create functionality that, when you click this button it increases the h1 value
-h1 += 1
+//.addEventlistner
+// button.addEventListener('click', (+=1) => {
 
+// }
+button.addEventListener("click", (event) => {
+h1.innerText ++;
+})
 
 /* -------------------------------------------------------------------------- */
 // DECREMENT BUTTON FUNCTION 
 // Create functionality that, when you click this button it decreases the h1 value
+//.addEventlistner
+button1.addEventListener("click", (event) => {
+    h1.innerText --;
+})
+
+//reacting to things the user does

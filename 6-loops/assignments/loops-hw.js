@@ -52,18 +52,28 @@ console.log(lastNames)
 
 // 7.   Loop over the celebrity list and then loop through each name. 
 //      If a letter is a vowel, log it to the console
+const vowels = 'a,e,i,o,u'
 for(let i = 0; i < array.length; i++){
-   if(array[i].includes('a, e, i, o, u')){
-   } console.log(array[i])
+    const celebs = array[i]
+    for(let j = 0; j < array.length; j++){
+            const char = celebs[j]
+        if(vowels.includes(char)){
+            console.log(char)
+        }
+    }
 }
-
 
 
 // // 8.   Loop over the celebrity list and then loop through each name. 
 // //      If a letter is uppercase, log it to the console
 for(let i = 0; i < array.length; i++){
-    let upCase = array[i].toUpperCase()
-    console.log(upCase)
+    const celebs = array[i]
+    for(let j = 0; j < array.length; j++){
+            const char = celebs[j]
+        if(char === char.toUpperCase() && char !== ' '){
+            console.log(char)
+        } 
+    }
 }
 
 
@@ -73,22 +83,23 @@ for(let i = 0; i < array.length; i++){
 // //        Output: ['MARTHA-STEWART', 'DAVID-BECKHAM', etc..]
 const upCaseArray = []
 for(let i = 0; i < array.length; i++){
-    let upCase2 = ''
-    upCase2 += array[i].toUpperCase('-')
-    upCaseArray.push(upCase2)
+    upCaseArray.push(array.toString().toUpperCase().split(" ").join("-").split(","))
+    break;
 }
 console.log(upCaseArray)
+
 
 // 10.  Index your array to find your favorite celebrity. 
 //      Save that name to a variable
 //      Loop over the array until you find that individual
 //      Log that name to the console and break out of the loop
+
 for(let i = 0; i < array.length; i++){
-    let nM = 'Nicki Minaj'
-    if(typeof(array[i] === nM)){
+    let fav = 'Nicki Minaj'
+    if(array[i] === fav){
         console.log(array[i])
             break;
-    }
+    } 
 }
 
 
@@ -99,5 +110,15 @@ for(let i = 0; i < array.length; i++){
 //      If an index is divisible by both 2 & 3, log 'fizz-buzz'
 //      Otherwise print the index to the console
 for(let i = 0; i <= 30; i++){
-    console.log(i)
+    if(i % 3 === 0 && i % 2 !== 0){
+        console.log(i, 'fizz-buzz')
+    }else if(i % 3 === 0){
+        console.log(i, 'buzz')
+    }else if(i % 2 ===0){
+        console.log(i, 'fizz')
+    }else{
+        console.log(i)
+    }
 }
+
+

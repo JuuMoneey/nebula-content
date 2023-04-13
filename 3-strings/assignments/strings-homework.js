@@ -5,6 +5,7 @@ const string2  = "goodbye"
 
 let concatenatedString = (string1 + string2)
 console.log(concatenatedString)
+let concat2 = `${string1} ${string2}`
 
 
 // 2. Save the substring "Friend" from the string "Hello Friend"
@@ -55,11 +56,12 @@ console.log(greeting1[4])
 
 // 6. Find the index of the dash from 'Coding-Time!'
 const coding = 'Coding-Time!'
-console.log(coding.indexOf[6])
+// console.log(coding.indexOf[6]) wrong
+console.log(coding.indexOf(' - '))
 
 
 // 7. Write code to grab the final letter from a any string.
-const string = "string" 
+let string = "string" 
 let lastChar = string[string.length-1]
 console.log(lastChar)
 
@@ -71,14 +73,15 @@ console.log(string3.slice(0, 3))
 
 // 9. Turn the following string into an array of words: 'This-is-a-sentence';
 const sentence1 = "This-is-a-sentence" 
-const sentence2 = sentence1.split(' ')
-console.log(sentence2)
+
+console.log(sentence1.split('-'))
 
 
 // 10. Make the string of 12 from the following two numbers:
 let one = 1;
 let two = 2;
-console.log('one' + 'two')
+// console.log('one' + 'two') // wrong
+console.log(one.toString() + two.toString())
 
 
 

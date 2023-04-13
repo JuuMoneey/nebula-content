@@ -23,14 +23,19 @@ form.addEventListener('submit', (event) => {
     const value1 = document.createElement('h1')
     value1.textContent = firstName.value
     div.append(value1)
+    
     const value2 = document.createElement('h1')
     value2.textContent = lastName.value
     div.append(value2)
+    
     const value0 = document.createElement('h1')
     value0.textContent = age.value
+    div.append(value0)
+
     const value3 = document.createElement('h1')
     value3.textContent = coHortNumber.value
     div.append(value3)
+    
     const value4 = document.createElement('h1')
     value4.textContent = funFact.value
     div.append(value4)
@@ -41,4 +46,3 @@ form.addEventListener('submit', (event) => {
 
     form.reset()
 })
-

@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+div{
+    border: 5px solid green;
+    height: 50px;
+    width: 50px;
+
+}
+.div1{
+    display: flex;
+    cursor: pointer;
+    justify-content: space-evenly;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+header{
+    border: 10px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+main{
+    border: 10px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+footer{
+    border: 10px solid blue;
+    display: flex;
+    justify-content: space-between;
+}
+

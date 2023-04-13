@@ -40,3 +40,15 @@ console.log(car)
 // 7.   Using dot-notation update a property on the vehicle. 
 car.interior = 'Beige'
 console.log(car)
+
+
+
+
+
+
+
+
+// console.log(celeb)
+// for(let key in celeb){
+//     console.log(celeb[key])
+// }

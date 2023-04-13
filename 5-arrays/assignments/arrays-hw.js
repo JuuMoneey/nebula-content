@@ -51,9 +51,15 @@ let phone = ['iphone', 'android']
 let laptop = ['MacBook', 'HP', 'Dell']
 const tech = phone.concat(laptop)
 console.log(tech)
+//const tech = [...phone, ...laptop]
 
 //13.   Write a line of code to test if something is an array or not
 let j = [3,6,9] 
 console.log(Array.isArray(j))
 let v = 'Nope!'
 console.log(Array.isArray(v))
+
+
+// if(Array.isArray(j)){
+//    console.log(true)
+// }
