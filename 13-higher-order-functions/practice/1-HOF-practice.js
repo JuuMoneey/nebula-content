@@ -11,17 +11,21 @@ Write the callback functions separately
     const calculation = func(num1, num2);
     return calculation;
 }
-//CALLBACK FUNCTIONS
 function subtractTwoNumbers(num1, num2){
-  return num1 - num2;
+    return num1 - num2;
 }
 
 function addTwoNumbers(num1, num2){
-  return num1 + num2;
+    return num1 + num2;
 }
 
-console.log((calculate(3,6,addTwoNumbers)))
-console.log((calculate(9,1,subtractTwoNumbers)))
+function expponentNumbers(num2, num2){
+    return num1 ** num2
+}
+//CALLBACK FUNCTIONS
+console.log(calculate(2,4, expponentNumbers))
+console.log(calculate(3,6,addTwoNumbers))
+console.log(calculate(9,1,subtractTwoNumbers))
 
 
 /* Question 2
@@ -32,11 +36,19 @@ Example:
   calculateAll(multiply,[1,4,1,231,5]) => 4620
   calculateAll(subtract, [2,4,5,7]) => -14
 */
-const calculateAll = (operation, array) => {
-    for(let i = 0; i < array.length; i++){
-        
+
+function calculateAll(func, arr){
+    let total = 0;
+    for(let val of arr){
+        total = func(total, val)
     }
+    return total
 }
+
+const add = (total, val) => {
+    return total + val
+}
+console.log(calculateAll(add, [2,4,5,7]))
 
 
 // const calculateAll = (operation, array) => {
@@ -44,15 +56,32 @@ const calculateAll = (operation, array) => {
 // }
 
 
+// const calculateAll = (operation, array) => {
+//     for(let i = 0; i < array.length; i++){
+//     }
+// }
+
+
 /* Question 3
 Write a function that takes in a string and performs some form of manipulation on it
 Example:
   modify(yeller, 'I need a nap') => I NEED A NAP!!!
-  modify(sarcastic, 'I really like running') => I ReAlLy lIkE RuNnIng
-  modify(code, 'There is no cake') => Th-r- -s n- c-k-
+  modify(sarcastic, 'I really like running') => I ReAlLy lIkE RuNnIng 
+  modify(code, 'There is no cake') => Th-r- -s n- c-k- replace vowels with a dash
 */
 
+function modify(func, string){
+    func(string)
+}
 
+const yeller = (string) => {
+    return string.toUpperCase()
+}
+
+const sarcastic = (string) => {
+    return string.toUpperCase()
+}
+console.log(modify(yeller, 'I need a nap'))
 
 
 /* Question 4
@@ -69,8 +98,25 @@ Examples:
   oneType(nums, ['I love coding', 10, undefined, Infinity, 'goosfraba', null, ['Nested Array!']]) 
   =>
   [10, Infinity]
-*/
+  */
 
 //array method filter 
-  
-  
+
+function oneType(func, arr){
+    const typeArr = []
+    for(let val of arr){
+        typeArr = func(val, arr)
+    }
+}
+
+const strings = (val, arr) => {
+    let newArr = [...arr]
+    if(typeOf(val) === 'string'){
+        return arr.push(val)
+    }else{
+        return arr
+    }
+}
+
+console.log(oneType(strings, ['I love coding', 10, undefined, Infinity, 'goosfraba', null, ['Nested Array!']]))
+ 
