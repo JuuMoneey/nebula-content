@@ -18,14 +18,32 @@ let total2 = (nums.reduce((num, num2) => {
 }))
 console.log(total2)
 
+
 /* Question 3
 Write a HOF to reduce all numbers in an array to the largest number */
-let total3 = (nums.reduce((num, num2) => {
-    return num * num2
-}, 100))
-console.log(total3)
+function largestNum(arr) {
+    return arr.reduce((acc, current) => {
+        if(acc > current){
+            return acc
+        }else{
+            return current
+        }
+    })
+}
+console.log(largestNum(nums))
 
 
 /* Question 4
 Write a HOF to find the oldest person in a group */
 const partyPeople = [{ name: 'John', age: 25 }, { name: 'Jordan', age: 18 }, { name: 'Frank', age: 50 }, { name: 'Anna', age: 12 }]
+
+function oldest(arr) {
+    return arr.reduce((acc, current) => {
+        if(acc.age > current.age){
+            return acc
+        }else{
+            return current
+        }
+    })
+}
+console.log(oldest(partyPeople))

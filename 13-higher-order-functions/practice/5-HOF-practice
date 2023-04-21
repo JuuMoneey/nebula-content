@@ -17,14 +17,21 @@ console.log(numz)
 /* Question 3
 Write a function to filter an array for all the non number item */
 const q3Array = [1, 'a', 'b', 2, {}, []]
-const nonNums = q3Array.filter((noNums, nums) => {
-  if(noNums !== nums){
-    return noNums
-  }else{
-    return nums
-  }
-})
-console.log(nonNums)
+// const nonNums = q3Array.filter((noNums, nums) => {
+//   if(noNums !== nums){
+//     return noNums
+//   }else{
+//     return nums
+//   }
+// })
+// console.log(nonNums)
+
+function filteredNonNums (arr) {
+  return arr.filter((item) => typeof(item) !== 'number')
+}
+
+console.log(filteredNonNums(q3Array))
+
 
 /* Question 4
 Write a function to filter an array of objects for people over the age of 21 */
@@ -34,13 +41,32 @@ const partyPeople = [
   { name: 'Frank', age: 50 },
   { name: 'Anna', age: 12 }
 ]
-const older = partyPeople.filter(age, name => {
-  return age > 21
-})
-console.log(older)
+// const older = partyPeople.filter(age, name => {
+//   return age > 21
+// })
+// console.log(older)
+
+function filterOver21 (arr) {
+  return arr.filter((person) => person.age > 21)
+}
+console.log(filterOver21(partyPeople))
 
 
 /* Question 5
 Write a function to filter out all letters from a string
   Hint: filter doesn't work on strings.. */
 // filter and reduce
+let string = 'this1212 is && string!!!'
+
+// function filterAllLetters (str){
+//   const myArray = str.split('')
+//   return myArray.filter((a) => /[^a-zA-Z]/g.test(a)).join('')
+// }
+// console.log(filterAllLetters(string))
+
+// function filterAllLetters (str){
+//   const myArray = str.split('')
+//   return myArray.filter((char) => char.toUppercase() === char.toLowerCase()).join('')
+// }
+
+// console.log(filterAllLetters(string))
