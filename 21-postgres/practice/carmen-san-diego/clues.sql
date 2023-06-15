@@ -2,21 +2,21 @@
 -- traveling through Southern Europe. She's most likely traveling someplace where she won't be noticed,
 -- so find the least populated country in Southern Europe, and we'll start looking for her there.
 
-SELECT * FROM country WHERE region = 'Southern Europe' ORDER BY population DESC;
+SELECT * FROM country WHERE region = 'Southern Europe' ORDER BY population ASC limit 1;
 VAT  | Holy See (Vatican City State), Europe, Southern Europe, Santa Sede/Citt∩┐╜ del Vaticano, Independent Church State
 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
 -- this country's officially recognized language. Check our databases and find out what language is
 -- spoken in this country, so we can call in a translator to work with you.
-SELECT * FROM countrylanguage ORDER BY countrycode DESC;
+SELECT * FROM countrylanguage WHERE countrycode='VAT';
 Italian
-
+-- SELECT * FROM countrylanguage ORDER BY countrycode DESC;
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
 -- to a different country, a country where people speak only the language she was learning. Find out which
 --  nearby country speaks nothing but that language.
-SELECT * FROM countrylanguage WHERE language='Italian' AND isofficial='t';
+SELECT * FROM countrylanguage WHERE language='Italian' AND percentage=100;
 --ITA, CHE, VAT, SMR
 -- Italy, Holy See (Vatican City State), San Marino
 
@@ -27,35 +27,27 @@ SELECT * FROM countrylanguage WHERE language='Italian' AND isofficial='t';
  --  be flying to.
 SELECT * FROM city WHERE countrycode='SMR' AND name='San Marino';
 -- San Marino
+-- Serravalle
+SELECT * FROM city JOIN country ON city.countrycode = country.code WHERE countrycode='SMR' AND country.name != city.name;
+
 
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different
 -- parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were
 -- headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
-SELECT * FROM city WHERE name LIKE 'S%n M%';
-SELECT * FROM country WHERE region='South America';
-
-
-City 'name'             | countrycode | district
-
--- San Miguel de Tucum∩┐╜n | ARG         | Tucum∩┐╜n        
-San Miguel              | ARG         | Buenos Aires     
--- San Miguel              | SLV         | San Miguel       
--- San Mateo               | PHL         | Southern Tagalog
--- San Miguel              | PHL         | Central Luzon
--- San Mart∩┐╜n Texmelucan | MEX         | Puebla   
--- San Miguelito           | PAN         | San Miguelito
--- San Marino              | SMR         | San Marino   
--- San Mateo               | USA         | California
-
+SELECT * FROM city JOIN country ON city.countrycode = country.code WHERE city.name LIKE 'Serr%' WHERE country.region='South America';
+Brazil
+-- SELECT * FROM city  WHERE name LIKE 'Serr%';
+-- SELECT * FROM country WHERE region='South America';
 
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
  -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
  -- follow right behind you!
-SELECT * FROM country ORDER BY capital;
-SELECT * FROM country WHERE name='Argentina';
+SELECT * FROM country WHERE code='BRA';
+
+-- SELECT * FROM country ORDER BY capital;
 
 
 
@@ -63,12 +55,12 @@ SELECT * FROM country WHERE name='Argentina';
  -- the boarding gates. We have one chance to catch her, we just have to know where she's heading and beat her to the
  -- landing dock.
 
-
+SELECT * FROM city WHERE id=211;
 
 -- Clue #8: Lucky for us, she's getting cocky. She left us a note, and I'm sure she thinks she's very clever, but
 -- if we can crack it, we can finally put her where she belongs – behind bars.
 
-
+SELECT * FROM 
 
 -- Our playdate of late has been unusually fun –
 -- As an agent, I'll say, you've been a joy to outrun.
