@@ -1,0 +1,241 @@
+// function validateWord(s) { 
+//     // input: string 
+//     // output: boolean
+//     // build a counting object 
+//     // check to see that all character appear same amount of times
+// }
+
+
+// // function validateWord(s){
+// //   var counts = {};
+// //   for(var c of s.toLowerCase()){
+// //     if(counts[c] === undefined){counts[c] = 0;}
+// //     counts[c]++;
+// //   }
+// //   return Math.max(...Object.values(counts)) === Math.min(...Object.values(counts));
+// // }
+
+// // for (int j = i + 1; j < str.length(); j++)
+// //                 if (str.charAt(i) == str.charAt(j))
+// //                     return false;
+
+
+// function validateWord(s){
+//     let count = {};
+//    for(let i of s.toLowerCase()){
+//      if(count[i] === undefined){count[i] = 0;}
+//      count[i]++;
+//    }
+//    return Math.max(...Object.values(count)) === Math.min(...Object.values(count));
+ 
+//  //Code goes here!
+//  // input: string 
+//  // output: boolean
+//  // build a counting object 
+//  // check to see that all character appear same amount of times
+//  //   for(let i = 0; i < s.length; i++){
+//  //  let count = 0;
+//  //   for(let j = 0; j < s.length; j++){
+//  //     if(s[i].toLowerCase() === s[j].toLowerCase())
+//  //       count++
+//  //       return true 
+//  //     }
+//  //   }
+//  }
+
+
+//  class Shark extends Animal {
+//   constructor(name, age, status) {
+//     super(name, age, 0, 'shark', status);
+//   }
+  
+//   getName(){
+//     return this.name
+//   }
+  
+//   getAge(){
+//     return this.age
+//   }
+  
+//   getStatus(){
+//     return this.status
+//   }
+  
+//   introduce() {
+//     return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+//   }
+// }
+
+
+// class Cat extends Animal {
+//   // Do the same here as you did for Shark - define your constructor function and any other methods you need
+//   constructor(name, age, status) {
+//     super(name, age, 4, 'cat', status);
+//     // invoking the parent class/constructor
+//   }
+  
+//   getName(){
+//     return this.name
+//   }
+  
+//   getAge(){
+//     return this.age
+//   }
+  
+//   getStatus(){
+//     return this.status
+//   }
+  
+//   introduce() {
+//     return `Hello, my name is ${this.name} and I am ${this.age} years old.  Meow meow!`;
+//   }
+// }
+
+// class Dog extends Animal {
+//   // On your own now - you can do it :D
+//   constructor(name, age, status, master) {
+//     super(name, age, 4, 'dog', status);
+//     // calling on the parent class's constructor with the original arguments
+//     this.master = master;
+//   }
+  
+//   getName(){
+//     return this.name
+//   }
+  
+//   getAge(){
+//     return this.age
+//   }
+  
+//   getStatus(){
+//     return this.status
+//   }
+  
+//   getMaster(){
+//     return this.master
+//   }
+  
+//   introduce(){
+//     return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+//   }
+  
+//   greetMaster(){
+//     return `Hello ${this.master}`
+//   }
+// }
+
+
+
+
+// function accum(s) {
+// 	// your code
+//   // input: string 
+//   // output : string 
+//   // string -> array 
+//   // split() 
+//   //.map() 
+//   // using index 
+//   // index = how many lowercase letters 
+//   // capitalize the letter and repeat some lower case letters 
+//   // loop and make lowercase letters or String.repeat() 
+//   // .join('-')
+     
+//   const result = []
+//   const lowerStr = s.toLowerCase()
+
+//   for(let i = 0; i < lowerStr.length; i++) {
+//     let str = lowerStr[i].toUpperCase()
+//     for(let j = 0; j < i; j++) {
+//       str += lowerStr[i]
+//     }
+//     result.push(str)
+//   }
+//   return result.join("-")
+// }
+// //
+// //       for(let i =0; i < s.length; i++){
+// //         s.split('').map((letter, index) => {
+// //           letter.toUpperCase() + letter.toLowerCase().repeat(index).join('-')
+// //         })
+// //       }
+// //
+// //
+// // .map version
+// // function accum(s) {
+// //   return [...s].map((char, index) => (char.toUpperCase() + char.toLowerCase().repeat(index))).join("-")
+// // }
+
+
+// // const result = []
+// // const lowerStr = s.toLowerCase()
+// // // loop and make lowercase letters or String.repeat() 
+
+// // for(let i = 0; i < lowerStr.length; i++) {
+// //   let str = lowerStr[i].toUpperCase()
+// // // capitalize the letter and repeat some lower case letters 
+// //   for(let j = 0; j < i; j++) {
+// //     str += lowerStr[i]
+// //   }
+// //   result.push(str)
+// // }
+// // return result.join("-")
+// // // .join('-')
+
+
+
+// function isPangram(string){
+//   //...
+//   //input: string 
+//   //output : boolean 
+//   // .every (array method) 
+//   // includes / indexOf 
+//   // Regex / .test() 
+//   // Alphabet array or string (ex. ['a','b','c'] or 'abcdef')
+ 
+  
+ 
+ 
+//  string = string.toLowerCase();
+//  let letters = 'abcdefghijklmnopqrstuvwxyz'
+//   return letters.split('').every(letter {
+//       return string.indexOf(letter)
+//   });
+// }
+
+
+
+
+
+// function ListNode(val) {
+//  this.val = val;
+//  this.next = null;
+// }
+
+class ListNode {
+  constructor(val){
+    this.val = val;
+    this.next = null;
+  }
+}
+
+let head = new ListNode(4);
+head.next = new ListNode(5);
+// head.next.next = new ListNode(1);
+// head.next.next.next = new ListNode(9);
+
+console.log(listNodeToString(head));
+// write a function that represents a linked list as an array
+function listNodeToString(node) {
+  //
+  //
+  let arr = [];
+  //loop
+  for(let current = node)
+}
+// expected output: [4,5,1,9]
+
+
+
+
+
+
